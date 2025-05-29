@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 35% 95%;
+    --foreground: 20 68% 17%;
+
+    --card: 38 35% 97%;
+    --card-foreground: 20 68% 17%;
+
+    --popover: 38 35% 97%;
+    --popover-foreground: 20 68% 17%;
+
+    --primary: 1 52% 35%;
+    --primary-foreground: 36 30% 94%;
+
+    --secondary: 11 49% 51%;
+    --secondary-foreground: 36 30% 94%;
+
+    --muted: 24 23% 77%;
+    --muted-foreground: 20 8% 45%;
+
+    --accent: 20 50% 51%;
+    --accent-foreground: 36 30% 94%;
+
+    --destructive: 1 72% 46%;
+    --destructive-foreground: 36 30% 94%;
+
+    --border: 24 15% 85%;
+    --input: 24 15% 85%;
+    --ring: 1 52% 35%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 30% 10%;
+    --foreground: 36 30% 94%;
+
+    --card: 20 25% 14%;
+    --card-foreground: 36 30% 94%;
+
+    --popover: 20 25% 14%;
+    --popover-foreground: 36 30% 94%;
+
+    --primary: 1 42% 35%;
+    --primary-foreground: 36 30% 94%;
+
+    --secondary: 11 39% 41%;
+    --secondary-foreground: 36 30% 94%;
+
+    --muted: 12 15% 25%;
+    --muted-foreground: 36 5% 75%;
+
+    --accent: 20 40% 41%;
+    --accent-foreground: 36 30% 94%;
+
+    --destructive: 1 62% 36%;
+    --destructive-foreground: 36 30% 94%;
+
+    --border: 12 15% 25%;
+    --input: 12 15% 25%;
+    --ring: 1 42% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-examprep-kaabe-beige text-examprep-kaabe-brown;
+  }
+
+  /* Custom chart colors */
+  .progress-fill-maroon {
+    --tw-progress-fill: #8d2c2c;
+  }
+
+  .progress-fill-light-maroon {
+    --tw-progress-fill: #ad4c4c;
+  }
+
+  /* Custom scrollbar for the app */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: theme("colors.examprep.kaabe-beige");
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.examprep.kaabe-light-brown");
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme("colors.examprep.kaabe-maroon");
+  }
+}
+
+.chart-tooltip {
+  background-color: rgba(245, 242, 234, 0.95) !important;
+  border: 1px solid #ad4c4c !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.1) !important;
+  padding: 8px 12px !important;
+}
+
+.chart-tooltip-label {
+  color: #8d2c2c !important;
+  font-weight: 600 !important;
+  margin-bottom: 4px !important;
+}
+
+.chart-tooltip-value {
+  color: #3e2723 !important;
+  font-weight: 500 !important;
+}
+
+/* Chart customizations */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(94, 71, 67, 0.15);
+}
+
+.recharts-tooltip-cursor {
+  fill: rgba(141, 44, 44, 0.1);
+}
+
+.graph-card {
+  background: linear-gradient(
+    145deg,
+    rgba(245, 242, 234, 0.6) 0%,
+    rgba(240, 230, 217, 0.95) 100%
+  );
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(62, 39, 35, 0.08);
+  border: 1px solid rgba(173, 76, 76, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.graph-card:hover {
+  box-shadow: 0 8px 30px rgba(62, 39, 35, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Kaabe custom styles */
+.bg-kaabe-gradient {
+  background: linear-gradient(to right, #8d2c2c, #ad4c4c);
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.path-animation {
+  animation: dash 2s linear infinite;
+}
